@@ -22,8 +22,6 @@ void rawPointerExample(T value) {
 // They automatically deallocate the memory when the object is no longer needed.
 
 // Example 1: std::unique_ptr
-// std::unique_ptr provides exclusive ownership of a dynamically allocated object.
-// It automatically deletes the object when it goes out of scope or is explicitly reset.
 // Read more: https://en.cppreference.com/w/cpp/memory/unique_ptr
 template<typename T>
 void uniquePtrExample(T value) {
@@ -39,9 +37,6 @@ void uniquePtrExample(T value) {
     // or when it is reset explicitly
 }
 // Example 2: std::shared_ptr
-// std::shared_ptr provides shared ownership of a dynamically allocated object.
-// It allows multiple shared pointers to point to the same object.
-// The object is deleted only when the last shared pointer pointing to it is destroyed or reset.
 // Read more: https://en.cppreference.com/w/cpp/memory/shared_ptr
 template<typename T>
 void sharedPtrExample(T value) {
@@ -56,9 +51,6 @@ void sharedPtrExample(T value) {
 }
 
 // Example 3: std::weak_ptr
-// std::weak_ptr provides a non-owning "weak" reference to an object managed by std::shared_ptr.
-// It allows accessing the object if it still exists, but without prolonging its lifetime.
-// std::weak_ptr does not contribute to the reference count of the object.
 // Read more: https://en.cppreference.com/w/cpp/memory/weak_ptr
 template<typename T>
 void weakPtrExample(T value) {
