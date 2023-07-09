@@ -1,7 +1,13 @@
 #include <iostream>
 #include <memory>
 #include <fstream>
-
+/*
+ * Auther: Aman Arabzadeh
+ * Date: 2023-07-09
+ *  Smart Pointers Example in C++ and the problems with raw pointers.
+ *  Read more here:
+ *  https://github.com/AMAN-ARABZADEH/Smart_Pointers_Cpp/tree/main
+ */
 // Problem with Raw Pointers:
 // Raw pointers require manual memory management, leading to potential memory leaks and dangling pointers.
 template<typename T>
@@ -22,8 +28,6 @@ void rawPointerExample(T value) {
 // They automatically deallocate the memory when the object is no longer needed.
 
 // Example 1: std::unique_ptr
-// std::unique_ptr provides exclusive ownership of a dynamically allocated object.
-// It automatically deletes the object when it goes out of scope or is explicitly reset.
 // Read more: https://en.cppreference.com/w/cpp/memory/unique_ptr
 template<typename T>
 void uniquePtrExample(T value) {
@@ -39,9 +43,6 @@ void uniquePtrExample(T value) {
     // or when it is reset explicitly
 }
 // Example 2: std::shared_ptr
-// std::shared_ptr provides shared ownership of a dynamically allocated object.
-// It allows multiple shared pointers to point to the same object.
-// The object is deleted only when the last shared pointer pointing to it is destroyed or reset.
 // Read more: https://en.cppreference.com/w/cpp/memory/shared_ptr
 template<typename T>
 void sharedPtrExample(T value) {
@@ -56,9 +57,6 @@ void sharedPtrExample(T value) {
 }
 
 // Example 3: std::weak_ptr
-// std::weak_ptr provides a non-owning "weak" reference to an object managed by std::shared_ptr.
-// It allows accessing the object if it still exists, but without prolonging its lifetime.
-// std::weak_ptr does not contribute to the reference count of the object.
 // Read more: https://en.cppreference.com/w/cpp/memory/weak_ptr
 template<typename T>
 void weakPtrExample(T value) {
@@ -79,56 +77,12 @@ void weakPtrExample(T value) {
     // weakPtr becomes empty if the object is deleted
 }
 
-///////////// RAII Example for File Handling
-
-
-class FileHandler {
-public:
-    explicit FileHandler(const std::string& filename)
-            : fileStream(filename)
-    {
-        if (!fileStream) {
-            throw std::runtime_error("Failed to open file: " + filename);
-        }
-    }
-
-    void writeData(const std::string& data) {
-        if (fileStream.is_open()) {
-            fileStream << data;
-        }
-    }
-
-    std::string readData() {
-        std::string content;
-        fileStream.seekg(0); // Reset the file position to the beginning
-        std::string line;
-        while (std::getline(fileStream, line)) {
-            content += line + '\n';
-        }
-        return content;
-    }
-
-private:
-    std::fstream fileStream;
-};
 
 int main() {
     rawPointerExample<int>(5);
     uniquePtrExample<int>(5);
     sharedPtrExample<int>(5);
     weakPtrExample<int>(5);
-    rawPointerExample<std::string>("RAw pointer.");
-    try {
-        FileHandler file("example.txt");
-        file.writeData("Hello, RAII!\n");
-        file.writeData("Hello, Friend\n");
-
-        std::string fileContent = file.readData();
-        std::cout << "File content:\n" << fileContent;
-    } catch (const std::exception& e) {
-        std::cerr << "Exception: " << e.what() << std::endl;
-        return 1;
-    }
 
 
 
