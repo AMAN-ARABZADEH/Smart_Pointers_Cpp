@@ -13,7 +13,7 @@
 template<typename T>
 void rawPointerExample(T value) {
     T* rawPtr = new T(value); // Allocate memory dynamically
-    std::cout << *rawPtr << std::endl;
+    std::cout << *rawPtr << std::endl; 
 
     delete rawPtr; // Deallocate the memory
 
