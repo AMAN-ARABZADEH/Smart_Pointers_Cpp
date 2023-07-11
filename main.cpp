@@ -1,7 +1,13 @@
 #include <iostream>
 #include <memory>
 #include <vector>
-
+/*
+ * Auther: Aman Arabzadeh
+ * Date: 2023-07-10
+ *  Smart Pointers Example in C++ and the problems with raw pointers.
+ *  Read more here:
+ *  https://github.com/AMAN-ARABZADEH/Smart_Pointers_Cpp/tree/main 
+ */
 struct Person {
     std::string name{};
     std::string address{};
@@ -35,16 +41,6 @@ struct Post {
 };
 
 
-
-
-
-/*
- * Auther: Aman Arabzadeh
- * Date: 2023-07-09
- *  Smart Pointers Example in C++ and the problems with raw pointers.
- *  Read more here:
- *  https://github.com/AMAN-ARABZADEH/Smart_Pointers_Cpp/tree/main 
- */
 
 
 // Problem with Raw Pointers:
