@@ -1,7 +1,6 @@
 #include <iostream>
 #include <memory>
 #include <vector>
-<<<<<<< HEAD
 
 /*
  * Auther: Aman Arabzadeh
@@ -11,15 +10,6 @@
  *  https://github.com/AMAN-ARABZADEH/Smart_Pointers_Cpp/tree/main
  */
 
-=======
-/*
- * Auther: Aman Arabzadeh
- * Date: 2023-07-10
- *  Smart Pointers Example in C++ and the problems with raw pointers.
- *  Read more here:
- *  https://github.com/AMAN-ARABZADEH/Smart_Pointers_Cpp/tree/main 
- */
->>>>>>> 4ac80bcf6e8487f912994a88dc0cadc9768c62d3
 struct Person {
     std::string name{};
     std::string address{};
@@ -55,10 +45,7 @@ struct Post {
 
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 4ac80bcf6e8487f912994a88dc0cadc9768c62d3
 // Problem with Raw Pointers:
 // Raw pointers require manual memory management, leading to potential memory leaks and dangling pointers.
 template<typename T>
