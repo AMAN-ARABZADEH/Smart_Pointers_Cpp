@@ -40,5 +40,8 @@ Please refer to the provided links to learn more about each smart pointer and th
 - [std::unique_ptr - cppreference.com](https://en.cppreference.com/w/cpp/memory/unique_ptr)
 - [std::shared_ptr - cppreference.com](https://en.cppreference.com/w/cpp/memory/shared_ptr)
 - [std::weak_ptr - cppreference.com](https://en.cppreference.com/w/cpp/memory/weak_ptr)
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 Feel free to modify and enhance this code as needed for your GitHub repository.
